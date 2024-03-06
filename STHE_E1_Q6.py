@@ -8,7 +8,7 @@ T_w_out = 35 # C
 corrected_LMTD = 0.9*(((T_e_in-T_w_out)-(T_e_out-T_w_in))/math.log((T_e_in-T_w_out)/(T_e_out-T_w_in)))
 
 # Fluid properties
-# Ethanol at 57.5 Ce
+# Ethanol at 57.5 C
 e_cp = 2960  # J/kg°C
 e_rho = 756  # kg/m^3
 e_mu = 0.000686  # Pa*s
