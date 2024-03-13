@@ -53,6 +53,25 @@ while True:
     A2 = (ms1*lambda_s1)/(U2*del_T2)
     A3 = (ms2*lambda_s2)/(U3*del_T3)
 
+    print(f"""
+    del_T1 = {del_T1}
+    del_T2 = {del_T2}
+    del_T3 = {del_T3}
+
+    T1 = {T1}
+    T2 = {T2}
+    T3 = {T3}
+
+    ms1 = {ms1}
+    ms2 = {ms2}
+    ms3 = {ms3}
+    S = {S}
+
+    A1 = {A1}
+    A2 = {A2}
+    A3 = {A3}
+    """)
+
     if math.isclose(A1,A2,rel_tol=0.1) and math.isclose(A2,A3,rel_tol=0.1):
         print("Calculated areas are in +-10% range. Proceeding with calculations.  ")
         break
@@ -62,6 +81,13 @@ while True:
         del_T1 *= (A1/Amean)
         del_T2 *= (A2/Amean)
         del_T3 *= (A3/Amean)
+
+        print(f"""
+        A mean = {Amean}
+        new del T1 = {del_T1}
+        new del T2 = {del_T2}
+        new del T3 = {del_T3}
+        """)
         continue
 
 tube_OD = 0.0254 # m
