@@ -41,7 +41,6 @@ q_critical = 0.44*(pitch/tube_od)*(lambda_b/math.sqrt(N_practical))*((sigma_b*9.
 h_nb = 0.104*(P_c**(0.69))*(q**0.7)*((1.8*((1/P_c)**(0.17)))+(4*((1/P_c)**(1.2)))+(10*((1/P_c)**(10)))) # W/m²°C
 
 U_calc = 1/((1/h_tube) + (1/h_nb) + (0.001*0.1761)) # W/m²°C
-print("Design is correct.Proceeding forward.")
 
 D_shell = (D_bundle+(4*0.0254))/0.7 # m
 h = D_shell*0.3
@@ -67,6 +66,8 @@ Results:
 
     Tubes are of 1" O.D. , 12 m Length and arranged on a square pitch of 1.25" 
     Practical number of tubes from chart = {N_practical}
+    Practical heat transfer area = {A_practical} m²
+    Practical assumed heat transfer coeeficient = {U_practical} W/m²°C
     Bundle diameter = {D_bundle} m
     Number of nozzles = {math.ceil(N_nozzles)}
 
@@ -77,7 +78,7 @@ Results:
     As U_calculated > U_assumed, design is correct.
 
     heat flux calculated = {q} W/m²
-    Critical heat flux = {q_critical} W/m²
+    0.7 x Critical heat flux = {0.7*q_critical} W/m²
 
     As calculated heat flux < 0.7*Critical heat flux, design is correct.
 
