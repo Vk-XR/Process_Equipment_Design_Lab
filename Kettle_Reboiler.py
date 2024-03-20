@@ -29,12 +29,14 @@ lmtd = ((T_s-T_f)-(T_s-T_b))/(math.log((T_s-T_f)/(T_s-T_b))) #°C
 A = Q/(U*lmtd) #m²
 N = A/(math.pi*tube_od*tube_L)
 N_practical = 56 # From chart
+A_practical = math.pi*tube_od*tube_L
+U_practical = Q/(A_practical*lmtd)
 
 D_bundle = tube_od*((N_practical/0.156)**(1/2.291)) # m
 N_nozzles = tube_L/(5*D_bundle)
 
 h_tube = 8000 #W/m²°C
-q = Q/A # W/m²
+q = Q/A_practical # W/m²
 q_critical = 0.44*(pitch/tube_od)*(lambda_b/math.sqrt(N_practical))*((sigma_b*9.81*(rho_b-rho_v)*rho_v*rho_v)**(0.25)) # W/m²
 h_nb = 0.104*(P_c**(0.69))*(q**0.7)*((1.8*((1/P_c)**(0.17)))+(4*((1/P_c)**(1.2)))+(10*((1/P_c)**(10)))) # W/m²°C
 
